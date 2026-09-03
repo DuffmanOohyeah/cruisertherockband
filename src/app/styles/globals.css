@@ -1,0 +1,288 @@
+@import 'tailwindcss';
+
+:root {
+    --color-gray: #ccc;
+    --color-charcoal: #333;
+    --color-gold: 255, 185, 19;
+    --color-red: 254, 21, 4;
+}
+
+@theme inline {
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+
+    /* start: custom palette */
+    --color-gold-light: rgba(var(--color-gold), 0.75);
+    --color-gold-dark: rgba(var(--color-gold), 0.5);
+    --color-red-light: rgba(var(--color-red), 1);
+    --color-red-dark: rgba(var(--color-red), 0.5);
+    /* end: custom palette */
+}
+
+body {
+    /* font-family: Arial, Helvetica, sans-serif; */
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+/* start: header.css */
+nav.navBlock,
+header.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-charcoal);
+    padding: 20px;
+    border: 3px solid var(--color-red-dark);
+    border-radius: 25px;
+    width: fit-content;
+    display: block;
+}
+
+header.sticky-header a.link {
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    color: var(--color-red-light);
+    text-decoration: none;
+}
+
+header.sticky-header a.link:hover {
+    color: var(--color-black);
+}
+
+header.sticky-header a.active {
+    color: var(--color-gold-light);
+}
+/* end: header.css */
+
+footer,
+div.pageCard {
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transform: translate(0, 0);
+}
+
+div.epkCard {
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transform: translate(0, 0);
+    background-color: rgba(0, 0, 0, 0.75);
+    /*border: 1px solid red;*/
+}
+
+div.pageBg {
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+}
+
+div#homeBg::before {
+    background-image: url('/fiddlers2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.5;
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+}
+
+div#gigBg::before {
+    background-image: url('/billy1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.5;
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+}
+
+div#musicBg::before {
+    background-image: url('/gear.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.5;
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+}
+
+div#socialsBg::before {
+    background-image: url('/cheers1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.5;
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+}
+
+div#picsBg:before {
+    background-image: url('/eddie.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.5;
+    position: absolute;
+    top: -750px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+}
+
+div#testimonialBg::before {
+    background-image: url('/mr_cool.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.5;
+    position: absolute;
+    top: -50px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+}
+
+div#contactBg::before {
+    background-image: url('/contact1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.5;
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+}
+
+div#epkBg:before {
+    background-image: url('/stratfordfiles1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.5;
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+}
+
+div.epkHeroHdr-UNUSED {
+    background-image: url('/frontline3.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;
+    opacity: 0.5;*/
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+    border: 1px solid red;
+}
+
+div.epkHeroHdr {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-image:
+        url('/frontline3.jpg'),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    background-repeat: no-repeat;
+    background-position: 100% 54%;
+    border-radius: 25px;
+    /*border: 1px solid red;*/
+    /*margin-top: -250px;*/
+}
+
+/*div.epkHeroHdr::before {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    width: 100%;
+    height: 200px;
+    background-image: url('/frontline3.jpg');
+    background-size: cover;
+}*/
+
+h1 {
+    color: var(--color-gold-light);
+    font-size: 1.75rem;
+}
+
+h2 {
+    padding-top: 20px;
+    color: var(--color-gold-dark);
+    font-size: 1.5rem;
+}
+
+span.blockspam {
+    display: none;
+}
+
+ul.gigsUl,
+ul.musicUl,
+ul.socialsUl {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+ul.testimonialsUl {
+    list-style-type: none;
+}
+
+li a.link,
+div a.link {
+    color: var(--color-gold-light);
+}
+
+nav a:hover {
+    color: var(--color-gold-dark);
+}
+
+nav a.link {
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    color: var(--color-gold-light);
+    text-decoration: none;
+    padding: 0px 5px 0px 5px;
+}
+
+nav a.link:hover {
+    color: var(--color-gold-dark);
+}
+
+li.cancelled-gig {
+    display: flex;
+    align-items: center;
+}
+
+li.cancelled-gig svg {
+    margin-left: 10px;
+}
