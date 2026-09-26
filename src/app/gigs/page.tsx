@@ -13,6 +13,7 @@ import Footer from '@/components/Footer';
 import { FcCancel } from 'react-icons/fc';
 
 const navLinks: NavLinksProps[] = [
+    { href: '#year27', label: 2027 },
     { href: '#year26', label: 2026 },
     { href: '#year25', label: 2025 },
     { href: '#year24', label: 2024 },
@@ -45,6 +46,13 @@ const GigListings = (props: ListingsYear): JSX.Element => {
     const { year } = props;
 
     const listings: ListingsProps[] = [
+        {
+            year: 2027,
+            venue: 'Thames Side Brewery',
+            month: 'February',
+            location: 'Staines-Upon-Thames UK', 
+            strike: false,
+        },
         {
             year: 2026,
             venue: 'Amersham Arms',
