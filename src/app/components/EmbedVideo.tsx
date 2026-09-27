@@ -41,6 +41,7 @@ const EmbedVideo = ({ id, h = 315, w = 560 }: EmbedVideoProps): JSX.Element => {
         },
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     return <YouTube videoId={id} loading="lazy" opts={opts} />;
 };
 

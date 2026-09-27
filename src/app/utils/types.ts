@@ -107,6 +107,7 @@ export type HandleContactChangeProps = {
 export type NavLinksProps = {
     href: string;
     label: string | number;
+    id: string;
 };
 
 export type ListingsYear = {

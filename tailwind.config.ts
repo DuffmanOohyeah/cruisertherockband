@@ -2,10 +2,10 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-	// module.exports = {
-	theme: {
-		extend: {
-			/*
+    // module.exports = {
+    theme: {
+        extend: {
+            /*
 				colors: {
 					// Configure your color palette here
 					white: '#fff', // #ffffff
@@ -21,11 +21,11 @@ const config: Config = {
 					},
 				},
 			*/
-		},
-	},
-	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-	plugins: [],
-	// safelist: ['color-gray-light', 'bg-(color-gray-light)'],
+        },
+    },
+    content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+    plugins: [],
+    // safelist: ['color-gray-light', 'bg-(color-gray-light)'],
 };
 
 export default config;

@@ -9,24 +9,13 @@ import {
     FaRegFileVideo,
     FaRegFileAudio,
 } from 'react-icons/fa';
-import {
-    EmbedAudioProps,
-    EmbedVideoProps,
-    MusicCssProps,
-    FbVideoProps,
-} from '@/utils/types';
+import { EmbedAudioProps, EmbedVideoProps, FbVideoProps } from '@/utils/types';
 import Modal from 'react-modal';
 import EmbedAudio, { audioAtts } from '@/components/EmbedAudio';
 import EmbedVideo, { videoAtts, fbVideoAtts } from '@/components/EmbedVideo';
 import CountUp from 'react-countup';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
-
-const css: MusicCssProps = {
-    h1Svg: 'align-middle inline-block mr-[7px]',
-    li: 'pt-[15px] pb-[15px] w-[50%] inline-block',
-    svg: 'inline w-5 h-5 align-middle',
-};
 
 const modalCss = {
     content: {
@@ -275,16 +264,16 @@ const Music = (): JSX.Element => {
     };
 
     return (
-        <div id="musicBg" className="pageBg">
+        <div id='musicBg' className='pageBg'>
             <Header />
-            <div className="pageCard w-[90%] md:w-[70%] lg:w-[50%]">
+            <div className='pageCard w-[90%] md:w-[70%] lg:w-[50%]'>
                 <h1>
-                    <FaMusic className={css.h1Svg} /> Music :: Our Pride &amp;
-                    Joy
+                    <FaMusic className='align-middle inline-block mr-[7px]' />{' '}
+                    Music :: Our Pride &amp; Joy
                 </h1>
                 <br />
                 Feel free to check out some of our tunes.
-                <div className="flex font-(--font-weight-bold) text-center pt-[20px]">
+                <div className='flex font-(--font-weight-bold) text-center pt-[20px]'>
                     <div
                         className={`p-[15px] w-[50%] ${
                             showVideoTab
@@ -293,7 +282,7 @@ const Music = (): JSX.Element => {
                         }`}
                     >
                         <Link
-                            href="#"
+                            href='#'
                             className={
                                 showVideoTab
                                     ? 'text-(--color-gold-light) hover:text-(--color-gold-dark)'
@@ -305,7 +294,7 @@ const Music = (): JSX.Element => {
                                 setShowAudioTab(false);
                             }}
                         >
-                            <FaRegFileVideo className={css.svg} />
+                            <FaRegFileVideo className='inline w-5 h-5 align-middle' />
                             &nbsp;&nbsp;&nbsp;Video&nbsp;&nbsp;&nbsp;
                             <CountUp
                                 end={videoArr.length + fbVideos.length}
@@ -323,7 +312,7 @@ const Music = (): JSX.Element => {
                         }`}
                     >
                         <Link
-                            href="#"
+                            href='#'
                             className={
                                 showAudioTab
                                     ? 'text-(--color-gold-light) hover:text-(--color-gold-dark)'
@@ -335,7 +324,7 @@ const Music = (): JSX.Element => {
                                 setShowAudioTab(true);
                             }}
                         >
-                            <FaRegFileAudio className={css.svg} />
+                            <FaRegFileAudio className='inline w-5 h-5 align-middle' />
                             &nbsp;&nbsp;&nbsp;Audio&nbsp;&nbsp;&nbsp;
                             <CountUp
                                 end={audioArr.length}
@@ -346,38 +335,34 @@ const Music = (): JSX.Element => {
                         </Link>
                     </div>
                 </div>
-                <div className="flex">
+                <div className='flex'>
                     <div
-                        id="videoTab"
+                        id='videoTab'
                         className={
                             showVideoTab
                                 ? 'visible w-full'
                                 : 'invisible w-[0px]'
                         }
                     >
-                        <ul className="musicUl">
+                        <ul className='musicUl'>
                             {videoArr.map(
                                 (obj: EmbedVideoProps, idx: number) => {
-                                    const { id, label, h, w } = obj;
-                                    const ytProps: EmbedVideoProps = {
-                                        id: id,
-                                        h: h,
-                                        w: w,
-                                    };
+                                    const { label } = obj;
 
                                     return (
-                                        <li className={css.li} key={idx}>
+                                        <li
+                                            className='pt-[15px] pb-[15px] w-[50%] inline-block'
+                                            key={idx}
+                                        >
                                             <Link
-                                                href="#"
-                                                className="link"
+                                                href='#'
+                                                className='link'
                                                 onClick={(evt) => {
                                                     evt.preventDefault();
                                                     openModal(idx);
                                                 }}
                                             >
-                                                <FaYoutube
-                                                    className={css.svg}
-                                                />
+                                                <FaYoutube className='inline w-5 h-5 align-middle' />
                                                 &nbsp;
                                                 {label}
                                             </Link>
@@ -388,9 +373,9 @@ const Music = (): JSX.Element => {
                                                     closeModals()
                                                 }
                                                 style={modalCss}
-                                                contentLabel="Video from Cruiser"
+                                                contentLabel='Video from Cruiser'
                                             >
-                                                <EmbedVideo {...ytProps} />
+                                                <EmbedVideo {...obj} />
                                             </Modal>
                                         </li>
                                     );
@@ -407,16 +392,19 @@ const Music = (): JSX.Element => {
                                 fbQueryString += '&t=0';
 
                                 return (
-                                    <li className={css.li} key={idx}>
+                                    <li
+                                        className='pt-[15px] pb-[15px] w-[50%] inline-block'
+                                        key={idx}
+                                    >
                                         <Link
-                                            href="#"
-                                            className="link"
+                                            href='#'
+                                            className='link'
                                             onClick={(evt) => {
                                                 evt.preventDefault();
                                                 openModal(idx + 100);
                                             }}
                                         >
-                                            <FaFacebook className={css.svg} />
+                                            <FaFacebook className='inline w-5 h-5 align-middle' />
                                             &nbsp;
                                             {label}
                                         </Link>
@@ -424,13 +412,13 @@ const Music = (): JSX.Element => {
                                             isOpen={isModalOpen(idx + 100)} // adding 100 for fb modals
                                             onRequestClose={() => closeModals()}
                                             style={modalCss}
-                                            contentLabel="Facebook video from Cruiser"
+                                            contentLabel='Facebook video from Cruiser'
                                         >
                                             <iframe
                                                 src={`https://www.facebook.com/plugins/video.php${fbQueryString}`}
                                                 height={height}
                                                 width={width}
-                                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                                allow='autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share'
                                                 allowFullScreen
                                                 style={{
                                                     borderWidth: 0,
@@ -444,28 +432,31 @@ const Music = (): JSX.Element => {
                         </ul>
                     </div>
                     <div
-                        id="audioTab"
+                        id='audioTab'
                         className={
                             showAudioTab
                                 ? 'visible w-full'
                                 : 'invisible w-[0px]'
                         }
                     >
-                        <ul className="musicUl">
+                        <ul className='musicUl'>
                             {audioArr.map((obj, idx) => {
                                 const _idx = idx + 1000;
 
                                 return (
-                                    <li className={css.li} key={_idx}>
+                                    <li
+                                        className='pt-[15px] pb-[15px] w-[50%] inline-block'
+                                        key={_idx}
+                                    >
                                         <Link
-                                            href="#"
-                                            className="link"
+                                            href='#'
+                                            className='link'
                                             onClick={(evt) => {
                                                 evt.preventDefault();
                                                 openModal(_idx);
                                             }}
                                         >
-                                            <FaSoundcloud className={css.svg} />
+                                            <FaSoundcloud className='inline w-5 h-5 align-middle' />
                                             &nbsp;
                                             {obj.label}
                                         </Link>
@@ -474,7 +465,7 @@ const Music = (): JSX.Element => {
                                             isOpen={isModalOpen(_idx)}
                                             onRequestClose={() => closeModals()}
                                             style={modalCss}
-                                            contentLabel="Audio from Cruiser"
+                                            contentLabel='Audio from Cruiser'
                                         >
                                             <EmbedAudio {...obj} />
                                         </Modal>
